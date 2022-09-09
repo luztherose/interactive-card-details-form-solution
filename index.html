@@ -31,26 +31,29 @@
           </div>
           <button>Continue</button>
         </div>
-        <form class="card-detail-form">
+        <form class="card-detail-form" id="id-card-form">
           <div class="card-detail-form-item card-detail-form-item-long-width">
             <label for="cname" class="card-detail-form-item-label">CARDHOLDER NAME</label>
-            <input type="text" id="cname" name="cname" placeholder="e.g. Jane Appleseed">
+            <input type="text" id="cardholderName" name="cname" placeholder="e.g. Jane Appleseed">
           </div>
           <div class="card-detail-form-item card-detail-form-item-long-width">
             <label for="cnumber" class="card-detail-form-item-label">CARD NUMBER</label>
-            <input type="number" id="cnumber" name="cnumber" placeholder="e.g. 1234 5678 9123 0000">
+            <input type="text" id="cardNumber" name="cnumber" placeholder="e.g. 1234 5678 9123 0000">
+            <p class="error-message"></p>
           </div>
           <div class="card-detail-form-item card-detail-form-exp-date">
             <div>
               <label class="card-detail-form-item-label">EXP. DATE (MM/YY)</label>
               <div>
-                <input type="text" id="cmonth" name="cmonth" placeholder="MM" class="exp-inputs">
-                <input type="text" id="cyear" name="cyear" placeholder="YY" class="exp-inputs">
+                <input type="number" id="cardExpMonth" name="cmonth" placeholder="MM" class="exp-inputs">
+                <input type="number" id="cardExpYear" name="cyear" placeholder="YY" class="exp-inputs">
+                <p class="cardExpDateErrorMessage error-message"></p>
               </div>
             </div>
             <div>
               <label class="card-detail-form-item-label">CVC</label>
-              <input type="number" id="cbacknumber" name="cbacknumber" placeholder="e.g. 123" class="exp-cvc-input">
+              <input type="number" id="cardCVC" name="cbacknumber" placeholder="e.g. 123" class="exp-cvc-input">
+              <p class="card-back-number-Error-message error-message"></p>
             </div>
           </div>
           <div class="confirm-button">
@@ -65,14 +68,14 @@
           </div>
           <p class="card-number">0000 0000 0000 0000</p>
           <div>
-            <p>Jane Appleseed</p>
-            <p>00/00</p>
+            <p id="cardholder-name">Jane Appleseed</p>
+            <p><span id="exp-month">00</span> / <span id="exp-year">00</span></p>
           </div>
         </div>
       </div>
       <div class="card-template-back card-back">
         <div class="card-back-content-container">
-          <p>000</p>
+          <p id="card-cvc">000</p>
         </div>
       </div>
     </section>
@@ -83,6 +86,7 @@
       <p>Coded by <a href="#">Luz De La Rosa</a>.</p>
     </div>
   </footer>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>
