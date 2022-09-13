@@ -23,6 +23,16 @@
 }
 
 
+input[type="text"]:active,
+input[type="number"]:active,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="text"]:hover,
+input[type="number"]:hover {
+    border: 1px solid purple;
+    cursor: pointer;
+}
+
 .card-detail-form .card-detail-form-item-long-width,
 .card-detail-form-exp-date div:nth-of-type(2) {
     display: flex;
