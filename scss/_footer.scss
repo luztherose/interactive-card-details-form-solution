@@ -1,0 +1,15 @@
+.attribution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 10px;
+    
+    p:first-of-type {
+        margin-right: 10px;
+    }
+}
+
+.attribution a {
+    color: $footer-link;
+}
