@@ -9,22 +9,20 @@ const pExpDateError = document.querySelector(".cardExpDateErrorMessage");
 const pCardBackNumberError = document.querySelector(".card-back-number-Error-message");
 const pCompleteState = document.querySelector(".complete-state-desktop");
 
-// Cardholder Information
+// Cardholder Elements
 const pCardholderName = document.querySelector("#cardholder-name");
 const pCardNumber = document.querySelector(".card-number");
 const pExpMonth = document.querySelector("#exp-month");
 const pExpYear = document.querySelector("#exp-year");
 const pCardCVC = document.querySelector("#card-cvc");
 
-// validate characters, numbers only
-
+// validate user input, numbers only
 const areAllNumbers = (inputStr) => {
     return inputStr.split("").every(item => Number(item) >= 0);
 }
 
 // Validate Card Numbers input
-const validateCardNumber = () => {
-    const cardNumber = document.getElementById("cardNumber").value;
+const validateCardNumber = (cardNumber) => {
     let isAValidCard;
 
     if (cardNumber.length >= 12 && cardNumber.length <= 16) {
@@ -48,13 +46,14 @@ const validateCardNumber = () => {
 // Validate Exp Month 
 const validateMonth = (cardExpMonth) => {
     let isAValidMonth;
+
     if (cardExpMonth === "") {
         isAValidMonth = false;
         pExpDateError.innerText = "Can't be blank";
     } else {
         const isValid = areAllNumbers(cardExpMonth);
         if (isValid) {
-            const month = Number(cardExpMonth)
+            const month = Number(cardExpMonth);
             if (month >= 1 && month <= 12) {
                 isAValidMonth = true;
             } else {
@@ -201,6 +200,14 @@ const displayCardholderInfo = (
 
 }
 
+const cleanInputFields = () => {
+    document.getElementById("cardholderName").value = "";
+    document.getElementById("cardNumber").value = "";
+    document.getElementById("cardExpMonth").value = "";
+    document.getElementById("cardExpYear").value = "";
+    document.getElementById("cardCVC").value = "";
+}
+
 const showCompleteStateScreen = () => {
     // Get user information from inputs
     const cardholderName = document.getElementById("cardholderName").value;
@@ -219,6 +226,7 @@ const showCompleteStateScreen = () => {
     }
 
     if (areAllFieldsValidated()) {
+        cleanInputFields();
         form.classList.add("no-show")
         pCompleteState.classList.remove("no-show");
     }

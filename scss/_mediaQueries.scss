@@ -1,0 +1,276 @@
+@media (max-width: 1201px) {
+    .card-container {
+        .card-left-bg {
+            width: 26%;
+        }
+
+        .card-detail-form {
+            width: 50%;
+            padding: 75px 0;
+            margin-left: 10%;
+        }
+    }
+
+    .card-detail-form-item-long-width input,
+    .confirm-button input,
+    .card-detail-form-exp-date {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1001px) {
+    .card-container {
+        .card-left-bg {
+            width: 30%;
+        }
+
+        .card-detail-form {
+            width: 40%;
+        }
+    }
+
+    .card-detail-form-item-long-width input,
+    .confirm-button input,
+    .card-detail-form-exp-date {
+        width: 85%;
+    }
+
+    .complete-state-desktop {
+        width: 55%;
+
+        button {
+            width: 45%;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .card-container {
+        .card-detail-container {
+            flex-direction: column;
+
+            .card-detail-form {
+                width: 55%;
+                margin-left: 0;
+                padding: 75px 0;
+                margin-top: 3rem;
+            }
+        }
+
+        .card-left-bg {
+            width: 100%;
+            min-height: 28vh;
+        }
+
+        .card-template-back {
+            bottom: 72%;
+            left: 30%;
+        }
+
+        .card-template-front {
+            bottom: 59%;
+            left: 20%;
+            z-index: 1;
+        }
+    }
+
+    .card-detail-form-item-long-width input,
+    .confirm-button input {
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .confirm-button {
+        margin-top: 1.5rem;
+
+        input {
+            padding: 15px 10px;
+            font-size: 3vw;
+            letter-spacing: 1.6px;
+        }
+    }
+
+    .complete-state-desktop {
+        width: 85%;
+        margin: 10rem 0;
+
+        button {
+            width: 55%;
+            padding: 15px 10px;
+            border-radius: 10px;
+            font-size: 2.5vw;
+        }
+
+        div:first-of-type {
+            .complete-state-icon {
+                width: 80px;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 540px) {
+    .card-container {
+        .card-detail-container {
+            .card-detail-form {
+                width: 75%;
+                margin-top: 3rem;
+            }
+        }
+
+        .card-left-bg {
+            min-height: 40vh;
+        }
+
+        .card-template-back {
+            bottom: 73%;
+            left: 20%;
+        }
+
+        .card-template-front {
+            bottom: 60%;
+            left: 6%;
+        }
+    }
+
+    .card-detail-form-item-long-width input,
+    .confirm-button input {
+        padding: 12px 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .confirm-button {
+        margin-top: 10px;
+
+        input {
+            padding: 20px 10px;
+            font-size: 3.5vw;
+            letter-spacing: 1.6px;
+        }
+    }
+
+    .complete-state-desktop {
+        width: 100%;
+
+        button {
+            width: 60%;
+        }
+    }
+
+}
+
+@media (max-width: 460px) {
+    .card-container {
+        .card-detail-container {
+            .card-detail-form {
+                width: 90%;
+                margin-top: 5rem;
+                margin-left: 2rem;
+            }
+        }
+
+        .card-left-bg {
+            min-height: 35vh;
+        }
+
+        .card-template-back {
+            left: 16%;
+            bottom: 74%;
+        }
+
+        .card-back {
+            width: 75%;
+
+            p {
+                font-size: 3.5vw;
+            }
+        }
+
+        .card-template-front {
+            bottom: 63%;
+            left: 3%;
+
+            .card-front {
+                width: 100%;
+                font-size: 3.5vw;
+                min-height: 180px;
+                padding: 5px 25px;
+            }
+        }
+    }
+
+    .complete-state-desktop {
+        button {
+            width: 65%;
+        }
+    }
+
+}
+
+@media (max-width: 380px) {
+    .card-container {
+        .card-detail-container {
+            .card-detail-form {
+                width: 90%;
+                margin-left: 1rem;
+            }
+        }
+
+        .card-left-bg {
+            min-height: 30vh;
+        }
+
+        .card-template-back {
+            left: 16%;
+            bottom: 78%;
+        }
+
+        .card-back {
+            width: 80%;
+            min-height: 160px;
+
+            p {
+                font-size: 4.5vw;
+                height: 160px;
+            }
+        }
+
+        .card-template-front {
+            width: 80%;
+            bottom: 65%;
+            left: 3%;
+
+            .card-front {
+                width: 100%;
+                font-size: 4vw;
+                min-height: 160px;
+                padding: 5px 25px;
+            }
+        }
+    }
+
+    .card-detail-form-item-label {
+        margin-bottom: 10px;
+    }
+
+    .card-detail-form-item-long-width input,
+    .confirm-button input,
+    .card-detail-form-exp-date {
+        width: 100%;
+    }
+
+    .complete-state-desktop {
+        button {
+            width: 85%;
+            font-size: 3.5vw;
+            padding: 20px 10px;
+        }
+    }
+
+    .logo {
+        width: 50px;
+    }
+}
