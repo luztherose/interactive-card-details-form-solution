@@ -156,17 +156,19 @@ const validateExpDate = (cardExpMonth, cardExpYear) => {
 const validateBackCardCode = (cardCVC) => {
     const isValid = areAllNumbers(cardCVC);
     let isAValidCVC;
+
     if (cardCVC === "") {
         isAValidCVC = false;
         inputCardVCV.classList.add("error-message-input-border");
         pCardBackNumberError.innerText = "Can't be blank";
     } else {
-        if (isValid) {
+        const hasAvalidLength = cardCVC.length === 3 || cardCVC.length === 4;
+        if (isValid && hasAvalidLength) {
             isAValidCVC = true;
         } else {
             isAValidCVC = false;
             inputCardVCV.classList.add("error-message-input-border");
-            pCardBackNumberError.innerText = "Wrong format, numbers only";
+            pCardBackNumberError.innerText = "Wrong format";
         }
 
     }
