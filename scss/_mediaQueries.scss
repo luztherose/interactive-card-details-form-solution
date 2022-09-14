@@ -1,14 +1,24 @@
 @media (max-width: 1201px) {
     .card-container {
         .card-left-bg {
-            width: 26%;
+            width: 30%;
         }
 
         .card-detail-form {
-            width: 50%;
+            width: 60%;
             padding: 75px 0;
-            margin-left: 10%;
+            margin-left: 3%;
+            padding-left: 15%;
         }
+        .card-template-front {
+            left: 10%;
+            bottom: 50%;
+        }
+    }
+
+    .card-template-back {
+        left: 15%;
+        bottom: 20%;
     }
 
     .card-detail-form-item-long-width input,
@@ -21,11 +31,12 @@
 @media (max-width: 1001px) {
     .card-container {
         .card-left-bg {
-            width: 30%;
+            width: 35%;
         }
 
         .card-detail-form {
             width: 40%;
+            padding-left: 3%;
         }
     }
 
@@ -216,7 +227,7 @@
         .card-detail-container {
             .card-detail-form {
                 width: 90%;
-                margin-left: 1rem;
+                margin-left: 0;
             }
         }
 
@@ -240,8 +251,8 @@
         }
 
         .card-template-front {
-            width: 80%;
-            bottom: 65%;
+            width: 85%;
+            bottom: 64%;
             left: 3%;
 
             .card-front {

@@ -34,8 +34,8 @@ This is a screenshot of my solution for the Interactive card details form coding
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/luztherose/interactive-card-details-form-solution)
-- Live Site URL: [Add live site URL here](https://github.com/luztherose/interactive-card-details-form-solution/)
+- Solution URL: [https://github.com/luztherose/interactive-card-details-form-solution](https://github.com/luztherose/interactive-card-details-form-solution)
+- Live Site URL: [https://github.com/luztherose/interactive-card-details-form-solution/](https://github.com/luztherose/interactive-card-details-form-solution/)
 
 ## My process
 

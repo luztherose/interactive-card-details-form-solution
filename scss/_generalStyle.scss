@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+.wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin:0 auto;
+}
+
 /* Chrome, Safari, Edge, Opera */
 *:focus {
     outline: none;
