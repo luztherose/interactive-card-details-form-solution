@@ -1,10 +1,12 @@
 // Get DOM Elements
 const form = document.querySelector("#id-card-form");
-const pErrorMessage = document.querySelector(".error-message");
-const inputCardNumberError = document.querySelector("#cardNumber");
-const inputCardExpMonth = document.querySelector("#cardExpMonth");
-const inputCardExpYear = document.querySelector("#cardExpYear");
-const inputCardVCV = document.querySelector("#cardCVC");
+const pCardNumberErrorMessage = document.querySelector(".cardNumberErrorMessage");
+const inputCardholderError = document.querySelector("#input-cardholder-name");
+const inputCardNumberError = document.querySelector("#input-card-number");
+const inputCardExpMonth = document.querySelector("#input-card-exp-month");
+const inputCardExpYear = document.querySelector("#input-card-exp-year");
+const inputCardVCV = document.querySelector("#input-card-cvc");
+const pCardholderNameErrorMessage = document.querySelector(".cardholderNameErrorMessage");
 const pExpDateError = document.querySelector(".cardExpDateErrorMessage");
 const pCardBackNumberError = document.querySelector(".card-back-number-Error-message");
 const pCompleteState = document.querySelector(".complete-state-desktop");
@@ -22,23 +24,44 @@ const areAllNumbers = (inputStr) => {
     return inputStr.split("").every(item => Number(item) >= 0);
 }
 
+// Validate cardholder input
+const validateCardholderName = (cardholderName) => {
+    let isValid;
+    if (cardholderName === "") {
+        isValid = false;
+        pCardholderNameErrorMessage.innerText = "Can't be blank";
+        inputCardholderError.classList.add("error-message-input-border");
+    } else {
+        isValid = true;
+    }
+
+    return isValid;
+}
+
 // Validate Card Numbers input
 const validateCardNumber = (cardNumber) => {
     let isAValidCard;
 
-    if (cardNumber.length >= 12 && cardNumber.length <= 16) {
-        const isValid = areAllNumbers(cardNumber);
-        if (isValid) {
-            isAValidCard = true;
+    if (cardNumber === "") {
+        isAValidCard = false;
+        pCardNumberErrorMessage.innerText = "Can't be blank";
+        inputCardNumberError.classList.add("error-message-input-border");
+    } else {
+
+        if (cardNumber.length === 15 || cardNumber.length === 16) {
+            const isValid = areAllNumbers(cardNumber);
+            if (isValid) {
+                isAValidCard = true;
+            } else {
+                isAValidCard = false;
+                pCardNumberErrorMessage.innerText = "Wrong format, numbers only";
+                inputCardNumberError.classList.add("error-message-input-border");
+            }
         } else {
             isAValidCard = false;
-            pErrorMessage.innerText = "Wrong format, numbers only";
+            pCardNumberErrorMessage.innerText = "Wrong format";
             inputCardNumberError.classList.add("error-message-input-border");
         }
-    } else {
-        isAValidCard = false;
-        pErrorMessage.innerText = "Wrong format";
-        inputCardNumberError.classList.add("error-message-input-border");
     }
 
     return isAValidCard;
@@ -109,7 +132,7 @@ const validateYear = (inputStr) => {
     return isAValidYear;
 }
 
-const alertEmptyField = (cardExpMonth, cardExpYear) => {
+const alertEmptyDateFields = (cardExpMonth, cardExpYear) => {
     let areAllFieldsFilled;
     if (cardExpMonth === "" && cardExpYear === "") {
         areAllFieldsFilled = false;
@@ -138,7 +161,7 @@ const validateExpDate = (cardExpMonth, cardExpYear) => {
     let isAValidMonth;
     let isAValidYear;
 
-    areAllFieldsFilled = alertEmptyField(cardExpMonth, cardExpYear);
+    areAllFieldsFilled = alertEmptyDateFields(cardExpMonth, cardExpYear);
 
     if (cardExpMonth.length > 0) {
         isAValidMonth = validateMonth(cardExpMonth);
@@ -176,6 +199,22 @@ const validateBackCardCode = (cardCVC) => {
 }
 
 // Display Cardholder information
+const formatCardNumber = (cardNumber) => {
+    const cardNumArr = cardNumber.split("");
+    const newArr = [];
+    let count = 0;
+
+    for (let i = 0; i < cardNumArr.length; i++) {
+        count++
+        newArr.push(cardNumArr[i]);
+        if (count === 4) {
+            newArr.push(" ");
+            count = 0;
+        }
+    }
+    return newArr.join("");
+}
+
 
 const displayCardholderInfo = (
     cardholderName,
@@ -187,7 +226,7 @@ const displayCardholderInfo = (
         pCardholderName.innerText = cardholderName;
     }
     if (cardNumber) {
-        pCardNumber.innerText = cardNumber;
+        pCardNumber.innerText = formatCardNumber(cardNumber);
     }
     if (cardExpMonth) {
         pExpMonth.innerText = cardExpMonth;
@@ -202,21 +241,22 @@ const displayCardholderInfo = (
 }
 
 const cleanInputFields = () => {
-    document.getElementById("cardholderName").value = "";
-    document.getElementById("cardNumber").value = "";
-    document.getElementById("cardExpMonth").value = "";
-    document.getElementById("cardExpYear").value = "";
-    document.getElementById("cardCVC").value = "";
+    document.getElementById("input-cardholder-name").value = "";
+    document.getElementById("input-card-number").value = "";
+    document.getElementById("input-card-exp-month").value = "";
+    document.getElementById("input-card-exp-year").value = "";
+    document.getElementById("input-card-cvc").value = "";
 }
 
 const showCompleteStateScreen = () => {
     // Get user information from inputs
-    const cardholderName = document.getElementById("cardholderName").value;
-    const cardNumber = document.getElementById("cardNumber").value;
-    const cardExpMonth = document.getElementById("cardExpMonth").value;
-    const cardExpYear = document.getElementById("cardExpYear").value;
-    const cardCVC = document.getElementById("cardCVC").value;
+    const cardholderName = document.getElementById("input-cardholder-name").value;
+    const cardNumber = document.getElementById("input-card-number").value;
+    const cardExpMonth = document.getElementById("input-card-exp-month").value;
+    const cardExpYear = document.getElementById("input-card-exp-year").value;
+    const cardCVC = document.getElementById("input-card-cvc").value;
 
+    validateCardholderName(cardholderName);
     validateCardNumber(cardNumber);
     validateExpDate(cardExpMonth, cardExpYear);
     validateBackCardCode(cardCVC);
@@ -241,7 +281,7 @@ const onSubmit = (event) => {
 const handleContinueButton = () => {
     pCompleteState.classList.add("no-show");
     form.classList.remove("no-show");
-    
+
 }
 
 form.addEventListener("submit", onSubmit);
