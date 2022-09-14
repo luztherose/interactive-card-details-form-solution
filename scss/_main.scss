@@ -12,13 +12,13 @@
         background-position: center center;
         background-size: cover;
         min-height: 100vh;
-        width: 23%;
+        width: 35%;
     }
 
     .card-detail-form {
-        width: 57%;
-        padding: 75px 15px;
-        margin-left: 3%;
+        width: 50%;
+        padding: 75px 0 0 10%;
+        margin-left: 5%;
     }
 }
 
@@ -44,8 +44,8 @@ input[type="number"]:hover {
 
 .card-detail-form-item-long-width input,
 .confirm-button input {
-    width: 40%;
-    padding: 8px 10px;
+    width: 60%;
+    padding: 10px 10px;
     border-radius: 7px;
 }
 
@@ -53,7 +53,7 @@ input[type="number"]:hover {
     margin-top: 10px;
 
     input {
-        padding: 12px 10px;
+        padding: 14px 10px;
         background-color: $very-dark-violet;
         color: $white;
         cursor: pointer;
@@ -69,12 +69,20 @@ input[type="number"]:hover {
 
 .card-detail-form-exp-date {
     display: flex;
-    width: 40%;
+    width: 60%;
     margin-bottom: 15px;
+
+    div:first-of-type {
+        width: 90%;
+    }
+
+    .card-detail-month-year {
+        display: flex;
+    }
 }
 
 .exp-inputs {
-    width: 40%;
+    width: 100%;
     padding: 10px;
     border-radius: 8px;
     margin-right: 10px;
@@ -85,13 +93,13 @@ input[type="number"]:hover {
     padding: 10px 12px;
     border-radius: 8px;
     margin-right: 10px;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 .card-template-back {
     position: absolute;
     bottom: 25%;
-    left: 12%;
+    left: 24%;
 
     .card-back-content-container {
         width: 100%;
@@ -117,7 +125,7 @@ input[type="number"]:hover {
     .card-template-front {
         position: absolute;
         bottom: 55%;
-        left: 6%;
+        left: 18%;
 
         .card-front {
             width: 350px;
@@ -149,6 +157,7 @@ input[type="number"]:hover {
 
 .card-number {
     margin-bottom: 30px;
+    padding-top: 20px;
     text-align: center;
     font-size: 1.5em;
 }
