@@ -8,6 +8,7 @@ const inputCardVCV = document.querySelector("#cardCVC");
 const pExpDateError = document.querySelector(".cardExpDateErrorMessage");
 const pCardBackNumberError = document.querySelector(".card-back-number-Error-message");
 const pCompleteState = document.querySelector(".complete-state-desktop");
+const continueButton = document.querySelector("#continue-button");
 
 // Cardholder Elements
 const pCardholderName = document.querySelector("#cardholder-name");
@@ -237,4 +238,11 @@ const onSubmit = (event) => {
     showCompleteStateScreen();
 }
 
+const handleContinueButton = () => {
+    pCompleteState.classList.add("no-show");
+    form.classList.remove("no-show");
+    
+}
+
 form.addEventListener("submit", onSubmit);
+continueButton.addEventListener("click", handleContinueButton);
