@@ -17,78 +17,81 @@
 </head>
 
 <body>
-  <main>
-    <section class="card-container">
-      <div class="card-detail-container">
-        <div class="card-left-bg"></div>
-        <div class="complete-state-desktop no-show">
-          <div>
-            <div class="complete-state-icon">
-              <img src="./images/icon-complete.svg" alt="An icon of check mark to indicate status completed">
-            </div>
-            <h1>THANK YOU!</h1>
-            <p>We've added you card details</p>
-          </div>
-          <button id="continue-button">Continue</button>
-        </div>
-        <form class="card-detail-form" id="id-card-form">
-          <div class="card-detail-form-item card-detail-form-item-long-width">
-            <label for="input-cardholder-name" class="card-detail-form-item-label">CARDHOLDER NAME</label>
-            <input type="text" id="input-cardholder-name" name="input-cardholder-name"
-              placeholder="e.g. Jane Appleseed">
-            <p class="cardholderNameErrorMessage error-message"></p>
-          </div>
-          <div class="card-detail-form-item card-detail-form-item-long-width">
-            <label for="input-card-number" class="card-detail-form-item-label">CARD NUMBER</label>
-            <input type="text" id="input-card-number" name="input-card-number" placeholder="e.g. 1234 5678 9123 0000">
-            <p class="cardNumberErrorMessage error-message"></p>
-          </div>
-          <div class="card-detail-form-item card-detail-form-exp-date">
+  <div class="wrapper">
+    <main>
+      <section class="card-container">
+        <div class="card-detail-container">
+          <div class="card-left-bg"></div>
+          <div class="complete-state-desktop no-show">
             <div>
-              <label class="card-detail-form-item-label">EXP. DATE (MM/YY)</label>
-              <div class="card-detail-month-year">
-                <input type="number" id="input-card-exp-month" name="card-month" placeholder="MM" class="exp-inputs">
-                <input type="number" id="input-card-exp-year" name="card-year" placeholder="YY" class="exp-inputs">
+              <div class="complete-state-icon">
+                <img src="./images/icon-complete.svg" alt="An icon of check mark to indicate status completed">
               </div>
-              <p class="cardExpDateErrorMessage error-message"></p>
+              <h1>THANK YOU!</h1>
+              <p>We've added you card details</p>
             </div>
+            <button id="continue-button">Continue</button>
+          </div>
+          <form class="card-detail-form" id="id-card-form">
+            <div class="card-detail-form-item card-detail-form-item-long-width">
+              <label for="input-cardholder-name" class="card-detail-form-item-label">CARDHOLDER NAME</label>
+              <input type="text" id="input-cardholder-name" name="input-cardholder-name"
+                placeholder="e.g. Jane Appleseed">
+              <p class="cardholderNameErrorMessage error-message"></p>
+            </div>
+            <div class="card-detail-form-item card-detail-form-item-long-width">
+              <label for="input-card-number" class="card-detail-form-item-label">CARD NUMBER</label>
+              <input type="text" id="input-card-number" name="input-card-number" placeholder="e.g. 1234 5678 9123 0000">
+              <p class="cardNumberErrorMessage error-message"></p>
+            </div>
+            <div class="card-detail-form-item card-detail-form-exp-date">
+              <div>
+                <label class="card-detail-form-item-label">EXP. DATE (MM/YY)</label>
+                <div class="card-detail-month-year">
+                  <input type="number" id="input-card-exp-month" name="card-month" placeholder="MM" class="exp-inputs">
+                  <input type="number" id="input-card-exp-year" name="card-year" placeholder="YY" class="exp-inputs">
+                </div>
+                <p class="cardExpDateErrorMessage error-message"></p>
+              </div>
+              <div>
+                <label class="card-detail-form-item-label">CVC</label>
+                <input type="number" id="input-card-cvc" name="cbacknumber" placeholder="e.g. 123"
+                  class="exp-cvc-input">
+                <p class="card-back-number-Error-message error-message"></p>
+              </div>
+            </div>
+            <div class="confirm-button">
+              <input type="submit" value="Confirm">
+            </div>
+          </form>
+        </div>
+        <div class="card-template-front">
+          <div class="card-front">
+            <div class="logo">
+              <img src="./images/card-logo.svg" alt="card logo">
+            </div>
+            <p class="card-number">0000 0000 0000 0000</p>
             <div>
-              <label class="card-detail-form-item-label">CVC</label>
-              <input type="number" id="input-card-cvc" name="cbacknumber" placeholder="e.g. 123" class="exp-cvc-input">
-              <p class="card-back-number-Error-message error-message"></p>
+              <p id="cardholder-name">Jane Appleseed</p>
+              <p><span id="exp-month">00</span> / <span id="exp-year">00</span></p>
             </div>
           </div>
-          <div class="confirm-button">
-            <input type="submit" value="Confirm">
-          </div>
-        </form>
-      </div>
-      <div class="card-template-front">
-        <div class="card-front">
-          <div class="logo">
-            <img src="./images/card-logo.svg" alt="card logo">
-          </div>
-          <p class="card-number">0000 0000 0000 0000</p>
-          <div>
-            <p id="cardholder-name">Jane Appleseed</p>
-            <p><span id="exp-month">00</span> / <span id="exp-year">00</span></p>
+        </div>
+        <div class="card-template-back card-back">
+          <div class="card-back-content-container">
+            <p id="card-cvc">000</p>
           </div>
         </div>
+      </section>
+    </main>
+    <footer>
+      <div class="attribution">
+        <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+        <p>Coded by <a href="https://luztherose.github.io/portfolio/">Luz De La Rosa</a>.</p>
       </div>
-      <div class="card-template-back card-back">
-        <div class="card-back-content-container">
-          <p id="card-cvc">000</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="attribution">
-      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
-      <p>Coded by <a href="https://luztherose.github.io/portfolio/">Luz De La Rosa</a>.</p>
-    </div>
-  </footer>
-  <script src="./script/script.js"></script>
+    </footer>
+    <script src="./script/script.js"></script>
+  </div>
 </body>
 
 </html>
