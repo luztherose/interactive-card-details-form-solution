@@ -103,7 +103,7 @@ const validateMonth = (cardExpMonth) => {
 }
 
 // Validate Exp Year 
-const validateYear = (inputStr) => {
+const validateYear = (cardExpYear) => {
     let isAValidYear;
 
     if (cardExpYear === "") {
@@ -111,7 +111,7 @@ const validateYear = (inputStr) => {
         inputCardExpMonth.classList.add("error-message-input-border");
         pExpDateError.innerText = "Can't be blank";
     } else {
-        const isValid = areAllNumbers(inputStr);
+        const isValid = areAllNumbers(cardExpYear);
         if (isValid) {
             isAValidYear = true;
         } else {
